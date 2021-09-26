@@ -1,0 +1,150 @@
+
+html,body, #root{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  align-items: center;
+  padding-bottom: 5em;
+  background-color: rgb(243, 234, 234);
+}
+
+.btn{
+  width: 15ch;
+  margin-right: 0.2em;
+  margin-top: 0.2em;
+}
+
+.btn:active{
+  background-color: gray;
+}
+
+.container{
+  margin-top: 0.5rem;
+  padding: 0.5em 1em;
+}
+
+.flex-justity-center{
+  display: flex;
+  justify-content: center;
+}
+
+.flex-space-around{
+  display: flex ;
+  justify-content: space-around;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-center-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border{
+  border: 1px solid lightslategray;
+}
+
+.nav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.scroll{
+  overflow-y: scroll;
+}
+
+.list-group{
+  overflow-y: auto;
+}
+
+.records{
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.record-list{
+  font-size: smaller;
+}
+
+.hide{
+  display: none;
+}
+
+span{
+  width: 10ch;
+}
+
+.not-found{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.full-screen{
+  min-height: 100vh;
+}
+
+.login{
+  flex-direction: column;
+}
+
+.login-form{
+  text-align: center;
+}
+
+.loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(168, 160, 160, 0.493);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logs{
+  min-height: 100vh;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: white;
+  background-color: rgb(22, 17, 17);
+  transition: all 250ms;
+  transform: translateX(100%);
+}
+
+.logs-show{
+  min-height: 100vh;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: white;
+  background-color: rgb(22, 17, 17);
+  transition: all 250ms;
+  transform: translateX(0);
+}
