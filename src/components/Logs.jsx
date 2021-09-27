@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 
-const Logs = ({showLogs,setShowLogs}) => {
+const Logs = ({showLogs,setShowLogs,logs}) => {
+
   return (
-    <div className={showLogs? "logs-show" : "logs"} >
+    <div className={showLogs? "logs logs-show" : "logs"} >
       <div className="container flex-row flex-space-around">
         <h1>logs</h1>
         <button className="btn btn-outline-light" onClick={()=>setShowLogs(false)}>Close</button>
@@ -10,7 +11,7 @@ const Logs = ({showLogs,setShowLogs}) => {
 
       <div className="container">
         <ul className="container">
-          <li>Soon... update!</li>
+          {logs.map(( person, idx)  => <li className="container ">{person.log}</li>)}
         </ul>
       </div>
     </div>

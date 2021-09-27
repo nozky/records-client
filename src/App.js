@@ -12,9 +12,10 @@ function App() {
 
   const [isAuth, setIsAuth] =useState(false)
   const [token, setToken] = useState(null)
+  const [logs, setLogs] = useState([])
 
   return (
-    <Context.Provider value={{isAuth,setIsAuth, token, setToken}}>
+    <Context.Provider value={{isAuth,setIsAuth, token, setToken, logs, setLogs}}>
       <div className="App">
       <Router>
         <Switch>

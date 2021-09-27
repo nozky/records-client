@@ -17,8 +17,18 @@ const Home = () => {
   const [record, setRecord] = useState([])
   const [render, setRender] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
-  const {setIsAuth,token} = useContext(Context)
   const [showLogs, setShowLogs] =useState(false)
+  const {setIsAuth,token,logs, setLogs} = useContext(Context)
+
+  const getLogs = async ()=>{
+    setIsLoading(true)
+    const response = await axios.get(`${process.env.REACT_APP_BASE_API_DEV}/log/all`)
+    if( response.data.status){
+      setLogs(response.data.msg)
+      setIsLoading(false)
+      setShowLogs( !showLogs)
+    }
+  }
 
   useEffect( ()=>{
     setIsLoading(true)
@@ -61,11 +71,11 @@ const Home = () => {
 
           <button className={toggleDelete? "btn btn-danger" : "btn btn-warning"} onClick={()=>{setToggleDelete(!toggleDelete)}} >Delete</button>
 
-          <button className="btn btn-dark" onClick={()=>{ setShowLogs( !showLogs) }}>Logs</button>
+          <button className="btn btn-dark" onClick={()=>{ getLogs() }}>Logs</button>
 
           {isLoading && <Loading />}
       </div>
-          <Logs showLogs={showLogs} setShowLogs={setShowLogs}/>
+          <Logs showLogs={showLogs} setShowLogs={setShowLogs} logs={logs}/>
     </>
   )
 }
