@@ -13,7 +13,7 @@ const Records = ({record, toggleDelete, setRender}) => {
   const log = async (name)=> {
     setIsloading(true)
     const config={ headers: { authorization: `Bearer ${token}`  }  }
-    const response = await axios.post(`${process.env.REACT_APP_BASE_API_DEV}/log`,{ log: `${name} - ${Date().toLocaleString("en-US", {timeZone: "America/Edmunton"})}` }, config)
+    const response = await axios.post(`${process.env.REACT_APP_BASE_API}/log`,{ log: `${name} - ${Date().toLocaleString("en-US", {timeZone: "America/Edmunton"})}` }, config)
     setIsloading(false)
   }
 

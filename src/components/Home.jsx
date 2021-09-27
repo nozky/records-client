@@ -22,7 +22,7 @@ const Home = () => {
 
   const getLogs = async ()=>{
     setIsLoading(true)
-    const response = await axios.get(`${process.env.REACT_APP_BASE_API_DEV}/log/all`)
+    const response = await axios.get(`${process.env.REACT_APP_BASE_API}/log/all`)
     if( response.data.status){
       setLogs(response.data.msg)
       setIsLoading(false)
